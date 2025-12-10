@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="(localdb)_MSSQLLocalDB.DW_Football_Staging"
+  DTS:DTSID="{13C67224-4420-4FDE-BD98-10CC1CB4CC4C}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DW_Football_Staging;Provider=MSOLEDBSQL19.1;Integrated Security=SSPI;Application Name=SSIS-Integration Services Project1-{13C67224-4420-4FDE-BD98-10CC1CB4CC4C}(localdb)\MSSQLLocalDB.DW_Football_Staging;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

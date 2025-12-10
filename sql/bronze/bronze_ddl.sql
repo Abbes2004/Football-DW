@@ -88,38 +88,33 @@ CREATE TABLE bronze.staging_epl_match_details (
     [referee] VARCHAR(100) NULL,
     [stadium] VARCHAR(150) NULL,
 
-    [Season] VARCHAR(10) NULL,
+    [Season] VARCHAR(20) NULL,
     [Date] VARCHAR(50) NULL
 );
 
 
 CREATE TABLE bronze.staging_player_stats (
-    Player                      VARCHAR(100),
-    Nation                      VARCHAR(20),
-    Pos                         VARCHAR(10),
-    Squad                       VARCHAR(100),
-
-    -- Numeric performance fields
-    Rk                          INT,
-    Age                         INT,
-    Born                        INT,
-    MP                          INT,
-    Starts                      INT,
-    Min                         INT,
-    [90s]                       DECIMAL(5,2),
-    Gls                         INT,
-    Ast                         INT,
-    CrdY                        INT,
-    CrdR                        INT,
-
-    -- Per-90 metrics
-    Gls_1                       DECIMAL(5,2),
-    Ast_1                       DECIMAL(5,2),
-
-    -- Market value
-    market_value_euro_k            INT,          -- stored in euros (€)
-    market_value_last_update    DATE
+    Season              VARCHAR(10),            
+    Player              VARCHAR(100),
+    Nation              VARCHAR(20),
+    Pos                 VARCHAR(10),
+    Squad               VARCHAR(100),
+    Age                 INT,
+    Born                INT,
+    MP                  INT,
+    Starts              INT,
+    Min                 INT,
+    [90s]               DECIMAL(5,2),
+    Gls                 INT,
+    Ast                 INT,
+    CrdY                INT,
+    CrdR                INT,
+    Gls_1               DECIMAL(5,2),
+    Ast_1               DECIMAL(5,2),
+    market_value_euro_k INT,
+    market_value_last_update DATE
 );
+GO
 
 CREATE TABLE bronze.staging_league_table_home (
     Season          VARCHAR(10),
