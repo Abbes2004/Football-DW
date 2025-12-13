@@ -26,11 +26,13 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">ALAA</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA3vfmF94hoE6b/8yg+yN2IwAAAAACAAAAAAAQZgAAAAEAACAAAADiTFq3TpkNHQWOK8AUNYhNyrA+SsLJM2ObujhtdJetTgAAAAAOgAAAAAIAACAAAADdJzP7ixy2MkN6YAT7dK0BGOoboD+5FGMgZIJj+d6BlpAAAAC3+7OBXaKA1IgESOI5gKuXinMK48f9FVh3RIN0iTzJTXgY6Sg1MqldAlgIa6Jz54j9rd5+cbcedR08KdSoL4HQp2Z1IBeRMWjQhuI1C3K10UIy5phgFPvtOT6yYgRErtM/K0yNBdmOiUJBycOOTMTcvOjj35U9K+CMq0fJ66oByoo0im7uag4O/d7+Ktlc2G9AAAAARzytXqbydU8c08LHDkzcKM7M53b0/G1ynxAXdgm7XaKXSR6ae+jgBYnsFKDy58yDWA03TNL5bzHued0poAjRuA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA3vfmF94hoE6b/8yg+yN2IwAAAAACAAAAAAAQZgAAAAEAACAAAAC9o4prMjFr7U2NaBbP7a2XicHe3b87X+w7Nl6h9ZT9jQAAAAAOgAAAAAIAACAAAABwi7+gk+Slr9NH4yUHXsIWbTVmEOpivb6UQihDCZwN5JAAAADc9rZ9V8XFLtwbqW5tr9pB4J58IvDiaUoUjWmuDvtfgI/7jYnVVgR7uF/5r1bazsdLx7n6ivC91rTr3Qgam9PZMFYFoca9cUZo74qYytJHzb2wfMnDAjhOntD2umLGRa3pJaN0rDJlAT7wbmMxhUT7QNlcbXhMxRbVoLHclLcqsT4m/3UO2QJazwGyLHNqssRAAAAABRnqjYc04unEdVcTQ248+pAqVAjFTeUbfhGpxO7A0Y/NpbiPs0kOjtQhsHRDCsYcC8OXsXJCqqV+IJSCoazRJQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
-          <SSIS:Package SSIS:Name="Package.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="trasform to silver tables.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="load to gold tables.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="extract to bronze tables.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="(localdb)_MSSQLLocalDB.DW_Football_Staging.conmgr" />
@@ -187,16 +189,50 @@
             </SSIS:Parameter>
           </SSIS:ProjectConnectionParameters>
           <SSIS:PackageInfo>
-            <SSIS:PackageMetaData SSIS:Name="Package.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="trasform to silver tables.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{4D0C8E4B-D41C-4FA4-9704-DB876D759174}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{B376E538-BA8D-40E4-BE54-10CAB0B615A6}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">24</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">53</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{B373B29C-BC9F-4BA8-A5A6-2B8ED87DC205}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{540CCE37-ADBC-4000-8924-C6D2111F0946}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="load to gold tables.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{33DBD641-26BF-4B86-8BD7-BCBCC49EF56D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">load to gold tables</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{6AB090B0-CF12-4D37-A94A-6B245E4CD10C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="extract to bronze tables.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{BC059676-779A-46EA-AD19-B56A548DC52A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">extract to bronze tables</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">45</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{675E3B39-287F-41BC-944D-00EDC7FD09F3}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -365,6 +401,8 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">
+                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -545,6 +583,8 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">
+                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>

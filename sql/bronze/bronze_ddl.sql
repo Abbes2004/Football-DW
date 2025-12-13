@@ -1,6 +1,5 @@
 IF OBJECT_ID('bronze.staging_epl_matchs','U') IS NOT NULL DROP TABLE bronze.staging_epl_matchs;
 IF OBJECT_ID('bronze.staging_epl_history','U') IS NOT NULL DROP TABLE bronze.staging_epl_history;
-IF OBJECT_ID('bronze.staging_epl_match_details','U') IS NOT NULL DROP TABLE bronze.staging_epl_match_details;
 IF OBJECT_ID('bronze.staging_league_table_home','U') IS NOT NULL DROP TABLE bronze.staging_league_table_home;
 IF OBJECT_ID('bronze.staging_league_table_away','U') IS NOT NULL DROP TABLE bronze.staging_league_table_away;
 IF OBJECT_ID('bronze.staging_league_table_overall','U') IS NOT NULL DROP TABLE bronze.staging_league_table_overall;
@@ -77,20 +76,7 @@ CREATE TABLE bronze.staging_epl_history (
 );
 
 
-CREATE TABLE bronze.staging_epl_match_details (
-    [Home_team_score] INT NULL,
-    [Home_team_name] VARCHAR(100) NULL,
 
-    [Away_team_score] INT NULL,
-    [Away_team_name] VARCHAR(100) NULL,
-
-    [attendance] VARCHAR(50) NULL,
-    [referee] VARCHAR(100) NULL,
-    [stadium] VARCHAR(150) NULL,
-
-    [Season] VARCHAR(20) NULL,
-    [Date] VARCHAR(50) NULL
-);
 
 
 CREATE TABLE bronze.staging_player_stats (
@@ -195,5 +181,7 @@ CREATE TABLE bronze.staging_squad_stats (
     G_minus_PK_90   DECIMAL(5,2),
     GA_minus_PK     DECIMAL(5,2)
 );
+
+
 
 

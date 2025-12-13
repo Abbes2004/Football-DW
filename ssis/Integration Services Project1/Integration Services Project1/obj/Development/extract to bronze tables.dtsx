@@ -1,0 +1,2901 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/8/2025 10:17:26 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ALAA"
+  DTS:CreatorName="ALAA\salou"
+  DTS:DTSID="{BC059676-779A-46EA-AD19-B56A548DC52A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="extract to bronze tables"
+  DTS:PackageType="5"
+  DTS:VersionBuild="45"
+  DTS:VersionGUID="{675E3B39-287F-41BC-944D-00EDC7FD09F3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[plMatchOdds_14_15]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{993BF22E-8413-40C3-BFB8-95DD1D62208F}"
+      DTS:ObjectName="plMatchOdds_14_15">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::CurrentFilePath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date"
+              DTS:DTSID="{3A54D980-E224-4F24-86DC-D9D0029F690A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HomeTeam"
+              DTS:DTSID="{5EC6CB9B-62FA-445E-B27A-A9541C881793}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AwayTeam"
+              DTS:DTSID="{FE11F594-B053-4227-9548-BD26F3D2AA5C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FTHG"
+              DTS:DTSID="{B8FBF6E4-47A1-45BE-8207-AD8D6FEC84E3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FTAG"
+              DTS:DTSID="{429291AC-4853-4AF3-BFB4-CD2653C278A3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FTR"
+              DTS:DTSID="{F9819DF0-8BFB-472A-80DB-FED02AC3A832}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HTHG"
+              DTS:DTSID="{020CBD45-7BA3-4EEC-88C0-1AAC56ED1277}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HTAG"
+              DTS:DTSID="{0E6EDE58-F576-4711-8653-96950402F864}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HTR"
+              DTS:DTSID="{7CD1BF5A-F0DE-445C-8532-A075326E5025}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HS"
+              DTS:DTSID="{98EFE796-5329-4DB4-AEEB-118A33BBF27E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AS"
+              DTS:DTSID="{6A048E34-3579-438A-8DE9-797BF6973F3A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HST"
+              DTS:DTSID="{09988D54-768F-48DE-AE49-01578815FB73}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AST"
+              DTS:DTSID="{73FA4D95-E664-4F09-8145-B3F4DE622FB1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HF"
+              DTS:DTSID="{D8411B3C-5104-43BC-826E-70EF638C6CC6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AF"
+              DTS:DTSID="{98010108-6738-49F2-903A-6C046786A778}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HC"
+              DTS:DTSID="{E39EF411-2FEA-4833-9F97-BB4146A86AEB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AC"
+              DTS:DTSID="{56CC4F63-E8B4-47DD-BC60-70D4E1209AD6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HY"
+              DTS:DTSID="{F78F0047-1CA4-4FC3-8BA7-7F92C5D496BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AY"
+              DTS:DTSID="{84553BF3-219E-4375-AD4F-6876C8C76290}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HR"
+              DTS:DTSID="{C363DCB8-6A24-4AE7-BEA6-62F6B9B4BD99}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AR"
+              DTS:DTSID="{588C98FF-3BDA-4041-AE76-ACFA4E4528A7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="B365H"
+              DTS:DTSID="{784F076B-C5EC-473D-8FEC-FC10B8143B38}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="B365D"
+              DTS:DTSID="{0F08101B-82EE-4960-9F60-5A80029BBCAE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="B365A"
+              DTS:DTSID="{BFA24089-D476-4382-88C8-AC7F626339BB}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[pl_match_history_csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{BD4F47F9-FF2B-41B5-9F10-E8554CD73234}"
+      DTS:ObjectName="pl_match_history_csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Abbes\Football-DW-Project\data\processed\epl_history.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Season"
+              DTS:DTSID="{60C581CE-5A16-42EF-9B82-A2339421DA3B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MatchDate"
+              DTS:DTSID="{E042194C-DDA2-44CE-B9B0-00B8684D3E94}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HomeTeam"
+              DTS:DTSID="{A9F104AB-1B17-43AA-8A75-89B583A94013}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AwayTeam"
+              DTS:DTSID="{C9612A49-E220-4812-AC8D-E5B1E5A3B383}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FullTimeHomeGoals"
+              DTS:DTSID="{015321F9-EBEE-4396-9ADB-28200A513D57}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FullTimeAwayGoals"
+              DTS:DTSID="{6CBFAF3F-52F2-4793-81EC-AD156D503AC6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FullTimeResult"
+              DTS:DTSID="{E4213E92-4A1B-49E8-A12D-5BD00E909A73}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HalfTimeHomeGoals"
+              DTS:DTSID="{13545E53-1BAD-4A53-BA7D-E8ED2B8A2340}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HalfTimeAwayGoals"
+              DTS:DTSID="{10A60675-0A3E-4E72-BB53-8EFD4604185B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HalfTimeResult"
+              DTS:DTSID="{7177834C-F4F4-4186-B19B-3633FC5E2BF4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HomeShots"
+              DTS:DTSID="{FA15DDAA-A2E0-4717-B31B-1FE75953354C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AwayShots"
+              DTS:DTSID="{842BF218-D759-4B15-A96E-8FEC7DF9B313}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HomeShotsOnTarget"
+              DTS:DTSID="{1C2A2A46-5D6D-47DC-8416-25FF927762DA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AwayShotsOnTarget"
+              DTS:DTSID="{CD3E4D8C-60F6-47E1-92E4-CD71C94F0D9B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HomeCorners"
+              DTS:DTSID="{22A5DF8F-5D81-40A7-8764-24AFC06B00D1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AwayCorners"
+              DTS:DTSID="{C18B6757-E461-4F0C-A9FF-DC4E96CEBD0A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HomeFouls"
+              DTS:DTSID="{AC37DF12-80B9-4776-82AE-D3BC95116196}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AwayFouls"
+              DTS:DTSID="{C056F121-0A9A-4682-B2E7-E683612363B6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HomeYellowCards"
+              DTS:DTSID="{6FD7A95E-2C75-4C4C-A69F-5E1AD8C15E66}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AwayYellowCards"
+              DTS:DTSID="{86352C87-913E-4D23-8BF4-19CF2538B38B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HomeRedCards"
+              DTS:DTSID="{06987B10-1522-4924-B44F-92343299C097}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AwayRedCards"
+              DTS:DTSID="{3EBF047A-2FDA-411A-B734-CF5B38135FC6}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{696293A5-7388-4759-B600-A8C058F43093}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CurrentFilePath">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B78DA818-C235-469E-A2BA-1565A2353D9C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">D:\Abbes\Football-DW-Project\data\processed\plMatchOdds\2014_2015</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\charger epl_history"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{4E13B053-1C27-4E44-90A2-8EA9176075BA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="charger epl_history"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\charger epl_history\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\charger epl_history\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[pl_match_history_csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[pl_match_history_csv]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HomeTeam]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HomeTeam]"
+                      length="50"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HomeTeam]"
+                      name="HomeTeam"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[AwayTeam]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AwayTeam]"
+                      length="50"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[AwayTeam]"
+                      name="AwayTeam"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[Season]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Season]"
+                      length="50"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[Season]"
+                      name="Season"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[MatchDate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MatchDate]"
+                      length="50"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[MatchDate]"
+                      name="MatchDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[FullTimeHomeGoals]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FullTimeHomeGoals]"
+                      length="50"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[FullTimeHomeGoals]"
+                      name="FullTimeHomeGoals"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[FullTimeAwayGoals]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FullTimeAwayGoals]"
+                      length="50"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[FullTimeAwayGoals]"
+                      name="FullTimeAwayGoals"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[FullTimeResult]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FullTimeResult]"
+                      length="50"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[FullTimeResult]"
+                      name="FullTimeResult"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HalfTimeHomeGoals]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HalfTimeHomeGoals]"
+                      length="50"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HalfTimeHomeGoals]"
+                      name="HalfTimeHomeGoals"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HalfTimeAwayGoals]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HalfTimeAwayGoals]"
+                      length="50"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HalfTimeAwayGoals]"
+                      name="HalfTimeAwayGoals"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HalfTimeResult]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HalfTimeResult]"
+                      length="50"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HalfTimeResult]"
+                      name="HalfTimeResult"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HomeShots]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HomeShots]"
+                      length="50"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HomeShots]"
+                      name="HomeShots"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[AwayShots]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AwayShots]"
+                      length="50"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[AwayShots]"
+                      name="AwayShots"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HomeShotsOnTarget]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HomeShotsOnTarget]"
+                      length="50"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HomeShotsOnTarget]"
+                      name="HomeShotsOnTarget"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[AwayShotsOnTarget]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AwayShotsOnTarget]"
+                      length="50"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[AwayShotsOnTarget]"
+                      name="AwayShotsOnTarget"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HomeCorners]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HomeCorners]"
+                      length="50"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HomeCorners]"
+                      name="HomeCorners"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[AwayCorners]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AwayCorners]"
+                      length="50"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[AwayCorners]"
+                      name="AwayCorners"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HomeFouls]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HomeFouls]"
+                      length="50"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HomeFouls]"
+                      name="HomeFouls"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[AwayFouls]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AwayFouls]"
+                      length="50"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[AwayFouls]"
+                      name="AwayFouls"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HomeYellowCards]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HomeYellowCards]"
+                      length="50"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HomeYellowCards]"
+                      name="HomeYellowCards"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[AwayYellowCards]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AwayYellowCards]"
+                      length="50"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[AwayYellowCards]"
+                      name="AwayYellowCards"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HomeRedCards]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HomeRedCards]"
+                      length="50"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HomeRedCards]"
+                      name="HomeRedCards"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[AwayRedCards]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AwayRedCards]"
+                      length="50"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[AwayRedCards]"
+                      name="AwayRedCards"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HomeTeam]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HomeTeam" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AwayTeam]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AwayTeam" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Season]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Season" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MatchDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MatchDate" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FullTimeHomeGoals]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FullTimeHomeGoals" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FullTimeAwayGoals]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FullTimeAwayGoals" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FullTimeResult]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FullTimeResult" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HalfTimeHomeGoals]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HalfTimeHomeGoals" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HalfTimeAwayGoals]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HalfTimeAwayGoals" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HalfTimeResult]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HalfTimeResult" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HomeShots]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HomeShots" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AwayShots]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AwayShots" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HomeShotsOnTarget]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HomeShotsOnTarget" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AwayShotsOnTarget]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AwayShotsOnTarget" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HomeCorners]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HomeCorners" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AwayCorners]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AwayCorners" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HomeFouls]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HomeFouls" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AwayFouls]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AwayFouls" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HomeYellowCards]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HomeYellowCards" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AwayYellowCards]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AwayYellowCards" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HomeRedCards]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HomeRedCards" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AwayRedCards]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AwayRedCards" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\charger epl_history\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[bronze].[staging_epl_history]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\charger epl_history\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{13C67224-4420-4FDE-BD98-10CC1CB4CC4C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(localdb)_MSSQLLocalDB.DW_Football_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Season]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Season"
+                      externalMetadataColumnId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Season]"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[Season]" />
+                    <inputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MatchDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MatchDate"
+                      externalMetadataColumnId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MatchDate]"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[MatchDate]" />
+                    <inputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HomeTeam]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HomeTeam"
+                      externalMetadataColumnId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HomeTeam]"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HomeTeam]" />
+                    <inputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AwayTeam]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AwayTeam"
+                      externalMetadataColumnId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AwayTeam]"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[AwayTeam]" />
+                    <inputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FullTimeHomeGoals]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FullTimeHomeGoals"
+                      externalMetadataColumnId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FullTimeHomeGoals]"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[FullTimeHomeGoals]" />
+                    <inputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FullTimeAwayGoals]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FullTimeAwayGoals"
+                      externalMetadataColumnId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FullTimeAwayGoals]"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[FullTimeAwayGoals]" />
+                    <inputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FullTimeResult]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FullTimeResult"
+                      externalMetadataColumnId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FullTimeResult]"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[FullTimeResult]" />
+                    <inputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HalfTimeHomeGoals]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HalfTimeHomeGoals"
+                      externalMetadataColumnId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HalfTimeHomeGoals]"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HalfTimeHomeGoals]" />
+                    <inputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HalfTimeAwayGoals]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HalfTimeAwayGoals"
+                      externalMetadataColumnId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HalfTimeAwayGoals]"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HalfTimeAwayGoals]" />
+                    <inputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HalfTimeResult]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HalfTimeResult"
+                      externalMetadataColumnId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HalfTimeResult]"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HalfTimeResult]" />
+                    <inputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HomeShots]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HomeShots"
+                      externalMetadataColumnId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HomeShots]"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HomeShots]" />
+                    <inputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AwayShots]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AwayShots"
+                      externalMetadataColumnId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AwayShots]"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[AwayShots]" />
+                    <inputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HomeShotsOnTarget]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HomeShotsOnTarget"
+                      externalMetadataColumnId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HomeShotsOnTarget]"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HomeShotsOnTarget]" />
+                    <inputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AwayShotsOnTarget]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AwayShotsOnTarget"
+                      externalMetadataColumnId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AwayShotsOnTarget]"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[AwayShotsOnTarget]" />
+                    <inputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HomeCorners]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HomeCorners"
+                      externalMetadataColumnId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HomeCorners]"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HomeCorners]" />
+                    <inputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AwayCorners]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AwayCorners"
+                      externalMetadataColumnId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AwayCorners]"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[AwayCorners]" />
+                    <inputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HomeFouls]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HomeFouls"
+                      externalMetadataColumnId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HomeFouls]"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HomeFouls]" />
+                    <inputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AwayFouls]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AwayFouls"
+                      externalMetadataColumnId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AwayFouls]"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[AwayFouls]" />
+                    <inputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HomeYellowCards]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HomeYellowCards"
+                      externalMetadataColumnId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HomeYellowCards]"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HomeYellowCards]" />
+                    <inputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AwayYellowCards]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AwayYellowCards"
+                      externalMetadataColumnId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AwayYellowCards]"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[AwayYellowCards]" />
+                    <inputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HomeRedCards]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HomeRedCards"
+                      externalMetadataColumnId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HomeRedCards]"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[HomeRedCards]" />
+                    <inputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AwayRedCards]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AwayRedCards"
+                      externalMetadataColumnId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AwayRedCards]"
+                      lineageId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output].Columns[AwayRedCards]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Season]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Season" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MatchDate]"
+                      dataType="dbDate"
+                      name="MatchDate" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HomeTeam]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HomeTeam" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AwayTeam]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AwayTeam" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FullTimeHomeGoals]"
+                      dataType="i4"
+                      name="FullTimeHomeGoals" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FullTimeAwayGoals]"
+                      dataType="i4"
+                      name="FullTimeAwayGoals" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FullTimeResult]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="FullTimeResult" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HalfTimeHomeGoals]"
+                      dataType="i4"
+                      name="HalfTimeHomeGoals" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HalfTimeAwayGoals]"
+                      dataType="i4"
+                      name="HalfTimeAwayGoals" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HalfTimeResult]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="HalfTimeResult" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HomeShots]"
+                      dataType="i4"
+                      name="HomeShots" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AwayShots]"
+                      dataType="i4"
+                      name="AwayShots" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HomeShotsOnTarget]"
+                      dataType="i4"
+                      name="HomeShotsOnTarget" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AwayShotsOnTarget]"
+                      dataType="i4"
+                      name="AwayShotsOnTarget" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HomeCorners]"
+                      dataType="i4"
+                      name="HomeCorners" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AwayCorners]"
+                      dataType="i4"
+                      name="AwayCorners" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HomeFouls]"
+                      dataType="i4"
+                      name="HomeFouls" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AwayFouls]"
+                      dataType="i4"
+                      name="AwayFouls" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HomeYellowCards]"
+                      dataType="i4"
+                      name="HomeYellowCards" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AwayYellowCards]"
+                      dataType="i4"
+                      name="AwayYellowCards" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HomeRedCards]"
+                      dataType="i4"
+                      name="HomeRedCards" />
+                    <externalMetadataColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AwayRedCards]"
+                      dataType="i4"
+                      name="AwayRedCards" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\charger epl_history\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\charger epl_history\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\charger epl_history\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\charger epl_history\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\charger epl_history.Paths[Flat File Source Output]"
+              endId="Package\charger epl_history\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\charger epl_history\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{8CE05DA5-0EA3-4C78-A558-64A6B07049BC}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{226CC2F1-FF90-4443-8ABA-2678EB9518FA}"
+        DTS:ObjectName="{226CC2F1-FF90-4443-8ABA-2678EB9518FA}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="D:\Abbes\Football-DW-Project\data\processed\plMatchOdds" />
+            <FEFEProperty
+              FileSpec="*.CSV" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\charger epl_matchs"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{C4DF7F7B-0BD1-4F36-AF8E-0FD5F38A6825}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="charger epl_matchs"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="2057"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[plMatchOdds_14_15]"
+                      connectionManagerRefId="Package.ConnectionManagers[plMatchOdds_14_15]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[Date]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Date]"
+                          length="20"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[Date]"
+                          name="Date"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HomeTeam]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HomeTeam]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HomeTeam]"
+                          name="HomeTeam"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[AwayTeam]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AwayTeam]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[AwayTeam]"
+                          name="AwayTeam"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[FTHG]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FTHG]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[FTHG]"
+                          name="FTHG"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[FTAG]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FTAG]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[FTAG]"
+                          name="FTAG"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[FTR]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FTR]"
+                          length="5"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[FTR]"
+                          name="FTR"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HTHG]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HTHG]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HTHG]"
+                          name="HTHG"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HTAG]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HTAG]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HTAG]"
+                          name="HTAG"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HTR]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HTR]"
+                          length="5"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HTR]"
+                          name="HTR"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HS]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HS]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HS]"
+                          name="HS"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[AS]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AS]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[AS]"
+                          name="AS"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HST]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HST]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HST]"
+                          name="HST"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[AST]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AST]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[AST]"
+                          name="AST"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HF]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HF]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HF]"
+                          name="HF"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[AF]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AF]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[AF]"
+                          name="AF"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HC]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HC]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HC]"
+                          name="HC"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[AC]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AC]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[AC]"
+                          name="AC"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HY]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HY]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HY]"
+                          name="HY"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[AY]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AY]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[AY]"
+                          name="AY"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HR]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HR]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HR]"
+                          name="HR"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[AR]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AR]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[AR]"
+                          name="AR"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[B365H]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[B365H]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[B365H]"
+                          name="B365H"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[B365D]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[B365D]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[B365D]"
+                          name="B365D"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[B365A]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[B365A]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[B365A]"
+                          name="B365A"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Date]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="Date" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HomeTeam]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="HomeTeam" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AwayTeam]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="AwayTeam" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FTHG]"
+                          dataType="r8"
+                          name="FTHG" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FTAG]"
+                          dataType="r8"
+                          name="FTAG" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FTR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          name="FTR" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HTHG]"
+                          dataType="r8"
+                          name="HTHG" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HTAG]"
+                          dataType="r8"
+                          name="HTAG" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HTR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          name="HTR" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HS]"
+                          dataType="r8"
+                          name="HS" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AS]"
+                          dataType="r8"
+                          name="AS" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HST]"
+                          dataType="r8"
+                          name="HST" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AST]"
+                          dataType="r8"
+                          name="AST" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HF]"
+                          dataType="r8"
+                          name="HF" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AF]"
+                          dataType="r8"
+                          name="AF" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HC]"
+                          dataType="r8"
+                          name="HC" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AC]"
+                          dataType="r8"
+                          name="AC" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HY]"
+                          dataType="r8"
+                          name="HY" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AY]"
+                          dataType="r8"
+                          name="AY" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HR]"
+                          dataType="r8"
+                          name="HR" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AR]"
+                          dataType="r8"
+                          name="AR" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[B365H]"
+                          dataType="r8"
+                          name="B365H" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[B365D]"
+                          dataType="r8"
+                          name="B365D" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[B365A]"
+                          dataType="r8"
+                          name="B365A" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[bronze].[staging_epl_matchs]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{13C67224-4420-4FDE-BD98-10CC1CB4CC4C}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[(localdb)_MSSQLLocalDB.DW_Football_Staging]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Date]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="Date"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[Date]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HomeTeam]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="HomeTeam"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HomeTeam]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HomeTeam]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AwayTeam]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="AwayTeam"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AwayTeam]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[AwayTeam]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTHG]"
+                          cachedDataType="r8"
+                          cachedName="FTHG"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FTHG]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[FTHG]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTAG]"
+                          cachedDataType="r8"
+                          cachedName="FTAG"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FTAG]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[FTAG]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTR]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="5"
+                          cachedName="FTR"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FTR]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[FTR]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HTHG]"
+                          cachedDataType="r8"
+                          cachedName="HTHG"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HTHG]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HTHG]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HTAG]"
+                          cachedDataType="r8"
+                          cachedName="HTAG"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HTAG]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HTAG]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HTR]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="5"
+                          cachedName="HTR"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HTR]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HTR]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HS]"
+                          cachedDataType="r8"
+                          cachedName="HS"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HS]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HS]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AS]"
+                          cachedDataType="r8"
+                          cachedName="AS"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AS]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[AS]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HST]"
+                          cachedDataType="r8"
+                          cachedName="HST"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HST]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HST]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AST]"
+                          cachedDataType="r8"
+                          cachedName="AST"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AST]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[AST]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HF]"
+                          cachedDataType="r8"
+                          cachedName="HF"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HF]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HF]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AF]"
+                          cachedDataType="r8"
+                          cachedName="AF"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AF]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[AF]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HC]"
+                          cachedDataType="r8"
+                          cachedName="HC"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HC]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HC]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AC]"
+                          cachedDataType="r8"
+                          cachedName="AC"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AC]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[AC]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HY]"
+                          cachedDataType="r8"
+                          cachedName="HY"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HY]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HY]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AY]"
+                          cachedDataType="r8"
+                          cachedName="AY"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AY]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[AY]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HR]"
+                          cachedDataType="r8"
+                          cachedName="HR"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HR]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[HR]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AR]"
+                          cachedDataType="r8"
+                          cachedName="AR"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AR]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[AR]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B365H]"
+                          cachedDataType="r8"
+                          cachedName="B365H"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B365H]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[B365H]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B365D]"
+                          cachedDataType="r8"
+                          cachedName="B365D"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B365D]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[B365D]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B365A]"
+                          cachedDataType="r8"
+                          cachedName="B365A"
+                          externalMetadataColumnId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B365A]"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output].Columns[B365A]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="Date" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HomeTeam]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="HomeTeam" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AwayTeam]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="AwayTeam" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FTHG]"
+                          dataType="r8"
+                          name="FTHG" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FTAG]"
+                          dataType="r8"
+                          name="FTAG" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FTR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          name="FTR" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HTHG]"
+                          dataType="r8"
+                          name="HTHG" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HTAG]"
+                          dataType="r8"
+                          name="HTAG" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HTR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          name="HTR" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HS]"
+                          dataType="r8"
+                          name="HS" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AS]"
+                          dataType="r8"
+                          name="AS" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HST]"
+                          dataType="r8"
+                          name="HST" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AST]"
+                          dataType="r8"
+                          name="AST" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HF]"
+                          dataType="r8"
+                          name="HF" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AF]"
+                          dataType="r8"
+                          name="AF" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HC]"
+                          dataType="r8"
+                          name="HC" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AC]"
+                          dataType="r8"
+                          name="AC" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HY]"
+                          dataType="r8"
+                          name="HY" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AY]"
+                          dataType="r8"
+                          name="AY" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HR]"
+                          dataType="r8"
+                          name="HR" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AR]"
+                          dataType="r8"
+                          name="AR" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B365H]"
+                          dataType="r8"
+                          name="B365H" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B365D]"
+                          dataType="r8"
+                          name="B365D" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B365A]"
+                          dataType="r8"
+                          name="B365A" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach Loop Container\charger epl_matchs.Paths[Flat File Source Output]"
+                  endId="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Foreach Loop Container\charger epl_matchs\Flat File Source.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{97856F11-3807-419B-8C6E-1D84F670523A}"
+          DTS:ObjectName="{97856F11-3807-419B-8C6E-1D84F670523A}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::CurrentFilePath" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\truncate epl_history"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{176CF0FA-1CC2-4099-A421-0529616300CE}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="truncate epl_history"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{13C67224-4420-4FDE-BD98-10CC1CB4CC4C}"
+          SQLTask:SqlStatementSource=" truncate table bronze.staging_epl_history;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\truncate epl_matchs"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{71FFC72A-CC86-4E61-9834-F795D43FA536}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="truncate epl_matchs"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{13C67224-4420-4FDE-BD98-10CC1CB4CC4C}"
+          SQLTask:SqlStatementSource="truncate table bronze.staging_epl_matchs;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{02B53E86-E44C-488F-8480-5AFB16D45759}"
+      DTS:From="Package\truncate epl_history"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\charger epl_history" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{A4F29E9A-2860-4EBE-87E6-D00D50B9A430}"
+      DTS:From="Package\truncate epl_matchs"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Foreach Loop Container" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\charger epl_history"
+          TopLeft="156.666658106778,157.733332236475" />
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Foreach Loop Container\charger epl_matchs"
+          TopLeft="31.6333054226318,24.1333320195145" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="230.4,120"
+          Size="230.4,163.2"
+          Id="Package\Foreach Loop Container"
+          TopLeft="434.166642944847,103.999999276797" />
+        <NodeLayout
+          Size="168.8,41.6"
+          Id="Package\truncate epl_history"
+          TopLeft="149.999991804362,38.1333330681588" />
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\truncate epl_matchs"
+          TopLeft="461.666641442313,25.1333331585592" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="237.13332495557,79.7333330681588">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77.9999991683162"
+              Start="0,0"
+              End="0,70.4999991683162">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.4999991683162" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="548.51664219358,66.7333331585592">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.2666661182378"
+              Start="0,0"
+              End="0,29.7666661182378">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.7666661182378" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\charger epl_history">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\charger epl_history\Flat File Source"
+          TopLeft="108.333327414261,63.1333329022594" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\charger epl_history\OLE DB Destination"
+          TopLeft="90.6666616731223,195.733331980175" />
+        <EdgeLayout
+          Id="Package\charger epl_history.Paths[Flat File Source Output]"
+          TopLeft="180.099994543692,104.733332902259">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,90.9999990779158"
+              Start="0,0"
+              End="0,83.4999990779158">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,83.4999990779158" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\charger epl_history\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\charger epl_matchs">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination"
+          TopLeft="312.499982925754,200.199998607834" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Foreach Loop Container\charger epl_matchs\Flat File Source"
+          TopLeft="258.833329443302,29.6666661901606" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\charger epl_matchs.Paths[Flat File Source Output]"
+          TopLeft="334.433329443302,71.2666661901606">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63.6666534824517,128.933332417674"
+              Start="0,0"
+              End="63.6666534824517,121.433332417674">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.4666662088368" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,60.4666662088368"
+                    Point2="0,64.4666662088368"
+                    Point3="4,64.4666662088368" />
+                  <mssgle:LineSegment
+                    End="59.6666534824517,64.4666662088368" />
+                  <mssgle:CubicBezierSegment
+                    Point1="59.6666534824517,64.4666662088368"
+                    Point2="63.6666534824517,64.4666662088368"
+                    Point3="63.6666534824517,68.4666662088368" />
+                  <mssgle:LineSegment
+                    End="63.6666534824517,121.433332417674" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\charger epl_matchs\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

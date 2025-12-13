@@ -1,0 +1,2150 @@
+﻿<Database xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Football_DW_Cube</ID>
+  <Name>Football_DW_Cube</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <LastUpdate>0001-01-01T00:00:00Z</LastUpdate>
+  <DataSourceImpersonationInfo>
+    <ImpersonationMode>Default</ImpersonationMode>
+    <ImpersonationInfoSecurity>Unchanged</ImpersonationInfoSecurity>
+  </DataSourceImpersonationInfo>
+  <Dimensions>
+    <Dimension>
+      <ID>Dim Nation</ID>
+      <Name>Dim Nation</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+          <Value>false</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+          <Value>100</Value>
+        </Annotation>
+      </Annotations>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Source xsi:type="DataSourceViewBinding">
+        <DataSourceViewID>DW Football</DataSourceViewID>
+      </Source>
+      <UnknownMember>Visible</UnknownMember>
+      <ErrorConfiguration>
+        <KeyNotFound>ReportAndStop</KeyNotFound>
+        <KeyDuplicate>ReportAndStop</KeyDuplicate>
+        <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+      </ErrorConfiguration>
+      <CurrentStorageMode>Molap</CurrentStorageMode>
+      <Attributes>
+        <Attribute>
+          <ID>Nation SK</ID>
+          <Name>Nation SK</Name>
+          <Usage>Key</Usage>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <NullProcessing>UnknownMember</NullProcessing>
+              <Source xsi:type="ColumnBinding">
+                <TableID>gold_DimNation</TableID>
+                <ColumnID>Nation_SK</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <AttributeRelationships>
+            <AttributeRelationship>
+              <AttributeID>Nation Standard Name BK</AttributeID>
+              <Name>Nation Standard Name BK</Name>
+            </AttributeRelationship>
+          </AttributeRelationships>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Nation Standard Name BK</ID>
+          <Name>Nation Standard Name BK</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>100</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>gold_DimNation</TableID>
+                <ColumnID>Nation_Standard_Name_BK</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+      </Attributes>
+      <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+    </Dimension>
+    <Dimension>
+      <ID>Dim Notes</ID>
+      <Name>Dim Notes</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+          <Value>false</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+          <Value>100</Value>
+        </Annotation>
+      </Annotations>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Source xsi:type="DataSourceViewBinding">
+        <DataSourceViewID>DW Football</DataSourceViewID>
+      </Source>
+      <ErrorConfiguration>
+        <KeyNotFound>ReportAndStop</KeyNotFound>
+        <KeyDuplicate>ReportAndStop</KeyDuplicate>
+        <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+      </ErrorConfiguration>
+      <CurrentStorageMode>Molap</CurrentStorageMode>
+      <Attributes>
+        <Attribute>
+          <ID>Notes SK</ID>
+          <Name>Notes SK</Name>
+          <Usage>Key</Usage>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>gold_DimNotes</TableID>
+                <ColumnID>Notes_SK</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <AttributeRelationships>
+            <AttributeRelationship>
+              <AttributeID>Notes Standard Name BK</AttributeID>
+              <Name>Notes Standard Name BK</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Notes Category</AttributeID>
+              <Name>Notes Category</Name>
+            </AttributeRelationship>
+          </AttributeRelationships>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Notes Standard Name BK</ID>
+          <Name>Notes Standard Name BK</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>255</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>gold_DimNotes</TableID>
+                <ColumnID>Notes_Standard_Name_BK</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Notes Category</ID>
+          <Name>Notes Category</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>50</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>gold_DimNotes</TableID>
+                <ColumnID>Notes_Category</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+      </Attributes>
+      <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+    </Dimension>
+    <Dimension>
+      <ID>Dim Team</ID>
+      <Name>Dim Team</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+          <Value>false</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+          <Value>100</Value>
+        </Annotation>
+      </Annotations>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Source xsi:type="DataSourceViewBinding">
+        <DataSourceViewID>DW Football</DataSourceViewID>
+      </Source>
+      <ErrorConfiguration>
+        <KeyNotFound>ReportAndStop</KeyNotFound>
+        <KeyDuplicate>ReportAndStop</KeyDuplicate>
+        <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+      </ErrorConfiguration>
+      <CurrentStorageMode>Molap</CurrentStorageMode>
+      <Attributes>
+        <Attribute>
+          <ID>Team SK</ID>
+          <Name>Team SK</Name>
+          <Usage>Key</Usage>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>gold_DimTeam</TableID>
+                <ColumnID>Team_SK</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <AttributeRelationships>
+            <AttributeRelationship>
+              <AttributeID>Squad Conformed BK</AttributeID>
+              <Name>Squad Conformed BK</Name>
+            </AttributeRelationship>
+          </AttributeRelationships>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Squad Conformed BK</ID>
+          <Name>Squad Conformed BK</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>100</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>gold_DimTeam</TableID>
+                <ColumnID>Squad_Conformed_BK</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+      </Attributes>
+      <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+    </Dimension>
+    <Dimension>
+      <ID>Dim Time</ID>
+      <Name>Dim Time</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+          <Value>false</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+          <Value>100</Value>
+        </Annotation>
+      </Annotations>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Source xsi:type="DataSourceViewBinding">
+        <DataSourceViewID>DW Football</DataSourceViewID>
+      </Source>
+      <ErrorConfiguration>
+        <KeyNotFound>ReportAndStop</KeyNotFound>
+        <KeyDuplicate>ReportAndStop</KeyDuplicate>
+        <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+      </ErrorConfiguration>
+      <CurrentStorageMode>Molap</CurrentStorageMode>
+      <Attributes>
+        <Attribute>
+          <ID>Time SK</ID>
+          <Name>Time SK</Name>
+          <Usage>Key</Usage>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>gold_DimTime</TableID>
+                <ColumnID>Time_SK</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <AttributeRelationships>
+            <AttributeRelationship>
+              <AttributeID>Season BK</AttributeID>
+              <Name>Season BK</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Season Start Year</AttributeID>
+              <Name>Season Start Year</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Season End Year</AttributeID>
+              <Name>Season End Year</Name>
+            </AttributeRelationship>
+          </AttributeRelationships>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Season BK</ID>
+          <Name>Season BK</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>10</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>gold_DimTime</TableID>
+                <ColumnID>Season_BK</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Season Start Year</ID>
+          <Name>Season Start Year</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>gold_DimTime</TableID>
+                <ColumnID>Season_Start_Year</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Season End Year</ID>
+          <Name>Season End Year</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>gold_DimTime</TableID>
+                <ColumnID>Season_End_Year</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+      </Attributes>
+      <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+    </Dimension>
+    <Dimension>
+      <ID>Dim Player</ID>
+      <Name>Dim Player</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+          <Value>false</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+          <Value>100</Value>
+        </Annotation>
+      </Annotations>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Source xsi:type="DataSourceViewBinding">
+        <DataSourceViewID>DW Football</DataSourceViewID>
+      </Source>
+      <UnknownMember>Visible</UnknownMember>
+      <ErrorConfiguration>
+        <KeyNotFound>ReportAndStop</KeyNotFound>
+        <KeyDuplicate>ReportAndStop</KeyDuplicate>
+        <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+      </ErrorConfiguration>
+      <CurrentStorageMode>Molap</CurrentStorageMode>
+      <Attributes>
+        <Attribute>
+          <ID>Player SK</ID>
+          <Name>Player SK</Name>
+          <Usage>Key</Usage>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>gold_DimPlayer</TableID>
+                <ColumnID>Player_SK</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <NameColumn>
+            <DataType>WChar</DataType>
+            <Source xsi:type="ColumnBinding">
+              <TableID>gold_DimPlayer</TableID>
+              <ColumnID>BirthYear</ColumnID>
+            </Source>
+          </NameColumn>
+          <AttributeRelationships>
+            <AttributeRelationship>
+              <AttributeID>Player Name BK</AttributeID>
+              <Name>Player Name BK</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Current Position</AttributeID>
+              <Name>Current Position</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Nation SK</AttributeID>
+              <Name>Nation SK</Name>
+            </AttributeRelationship>
+          </AttributeRelationships>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Player Name BK</ID>
+          <Name>Player Name BK</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>100</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>gold_DimPlayer</TableID>
+                <ColumnID>Player_Name_BK</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Current Position</ID>
+          <Name>Current Position</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>10</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>gold_DimPlayer</TableID>
+                <ColumnID>Current_Position</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Nation SK</ID>
+          <Name>Nation SK</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <NullProcessing>UnknownMember</NullProcessing>
+              <Source xsi:type="ColumnBinding">
+                <TableID>gold_DimNation</TableID>
+                <ColumnID>Nation_SK</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <AttributeRelationships>
+            <AttributeRelationship>
+              <AttributeID>Nation Standard Name BK</AttributeID>
+              <Name>Nation Standard Name BK</Name>
+            </AttributeRelationship>
+          </AttributeRelationships>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Nation Standard Name BK</ID>
+          <Name>Nation Standard Name BK</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>100</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>gold_DimNation</TableID>
+                <ColumnID>Nation_Standard_Name_BK</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+      </Attributes>
+      <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+    </Dimension>
+  </Dimensions>
+  <Cubes>
+    <Cube>
+      <ID>DW Football</ID>
+      <Name>DW Football</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+          <Value>
+            <dds xmlns="">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="19" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="8354" scrolltop="1254" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="15600" y="11875" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                <font>
+                  <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+                </font>
+                <mouseicon>
+                  <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                </mouseicon>
+              </diagram>
+              <layoutmanager>
+                <ddsxmlobj />
+              </layoutmanager>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimNotes" left="16434" top="5514" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4763" height="1947" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e00009b1200009b070000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="gold_DimNotes" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="FactPlayerPerformance" left="7267" top="11389" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="3874" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e0000220f000088130000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="gold_FactPlayerPerformance" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimNation" left="20" top="17622" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="4847" height="1588" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e0000ef12000034060000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="gold_DimNation" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimPlayer" left="1438" top="12555" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="3429" height="2667" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e0000650d00006b0a0000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="gold_DimPlayer" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="FactTeamPerformance" left="9589" top="3988" logicalid="5" controlid="5" masterid="0" hint1="0" hint2="0" width="4445" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e00005d11000088130000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="gold_FactTeamPerformance" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimTime" left="13541" top="14685" logicalid="6" controlid="6" masterid="0" hint1="0" hint2="0" width="3704" height="2307" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e0000780e000003090000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="gold_DimTime" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="FactMatchEvent" left="19645" top="13339" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="3916" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e00004c0f000088130000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="gold_FactMatchEvent" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimTeam" left="9726" top="0" logicalid="8" controlid="8" masterid="0" hint1="0" hint2="0" width="4128" height="1588" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e00002010000034060000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="gold_DimTeam" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="13734" top="6088" logicalid="9" controlid="9" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK__FactTeamP__Notes__2B0A656D]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="5" sourceattachpoint="20" destattachpoint="23" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="16434" y="6487" />
+                  <point x="15234" y="6487" />
+                  <point x="15234" y="6488" />
+                  <point x="14034" y="6488" />
+                </connector>
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="8904" top="1089" logicalid="10" controlid="10" masterid="0" hint1="0" hint2="0" width="2186" height="10600" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK__FactPlaye__Team___2EDAF651]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="8" destid="2" sourceattachpoint="3" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="10690" y="1588" />
+                  <point x="10690" y="6488" />
+                  <point x="9204" y="6488" />
+                  <point x="9204" y="11389" />
+                </connector>
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="10841" top="13589" logicalid="11" controlid="11" masterid="0" hint1="0" hint2="0" width="3000" height="2649" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK__FactPlaye__Time___2DE6D218]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="2" sourceattachpoint="16" destattachpoint="23" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="13541" y="15838" />
+                  <point x="12341" y="15838" />
+                  <point x="12341" y="13889" />
+                  <point x="11141" y="13889" />
+                </connector>
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="4567" top="13489" logicalid="12" controlid="12" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK__FactPlaye__Playe__2FCF1A8A]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="2" sourceattachpoint="15" destattachpoint="22" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="4867" y="13888" />
+                  <point x="6067" y="13888" />
+                  <point x="6067" y="13889" />
+                  <point x="7267" y="13889" />
+                </connector>
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="2044" top="14922" logicalid="13" controlid="13" masterid="0" hint1="0" hint2="0" width="1408" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK__DimPlayer__Natio__236943A5]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="4" sourceattachpoint="8" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="2443" y="17622" />
+                  <point x="2443" y="16422" />
+                  <point x="3152" y="16422" />
+                  <point x="3152" y="15222" />
+                </connector>
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="10841" top="1089" logicalid="14" controlid="14" masterid="0" hint1="0" hint2="0" width="1270" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK__FactTeamP__Team___2A164134]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="8" destid="5" sourceattachpoint="5" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="11240" y="1588" />
+                  <point x="11240" y="2788" />
+                  <point x="11811" y="2788" />
+                  <point x="11811" y="3988" />
+                </connector>
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="11511" top="8688" logicalid="15" controlid="15" masterid="0" hint1="0" hint2="0" width="4282" height="6497" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK__FactTeamP__Time___29221CFB]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="5" sourceattachpoint="6" destattachpoint="7" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="15393" y="14685" />
+                  <point x="15393" y="11837" />
+                  <point x="11811" y="11837" />
+                  <point x="11811" y="8988" />
+                </connector>
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="16945" top="15439" logicalid="16" controlid="16" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK__FactMatch__Time___32AB8735]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="7" sourceattachpoint="17" destattachpoint="22" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="17245" y="15838" />
+                  <point x="18445" y="15838" />
+                  <point x="18445" y="15839" />
+                  <point x="19645" y="15839" />
+                </connector>
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="11391" top="1089" logicalid="17" controlid="17" masterid="0" hint1="0" hint2="0" width="9412" height="12550" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK__FactMatch__AwayT__3493CFA7]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="8" destid="7" sourceattachpoint="7" destattachpoint="2" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="11790" y="1588" />
+                  <point x="11790" y="7463" />
+                  <point x="20503" y="7463" />
+                  <point x="20503" y="13339" />
+                </connector>
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="11941" top="1089" logicalid="18" controlid="18" masterid="0" hint1="0" hint2="0" width="10512" height="12550" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK__FactMatch__HomeT__339FAB6E]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="8" destid="7" sourceattachpoint="9" destattachpoint="8" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="12340" y="1588" />
+                  <point x="12340" y="7463" />
+                  <point x="22153" y="7463" />
+                  <point x="22153" y="13339" />
+                </connector>
+              </ddscontrol>
+            </dds>
+          </Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+          <Value>false</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+          <Value>8354</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+          <Value>1254</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+          <Value>20</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+          <Value>75</Value>
+        </Annotation>
+      </Annotations>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Dimensions>
+        <Dimension>
+          <ID>Dim Time</ID>
+          <Name>Dim Time</Name>
+          <DimensionID>Dim Time</DimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Time SK</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Season BK</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Season Start Year</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Season End Year</AttributeID>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension>
+          <ID>Away Team SK</ID>
+          <Name>Away Team SK</Name>
+          <DimensionID>Dim Team</DimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Team SK</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Squad Conformed BK</AttributeID>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension>
+          <ID>Home Team SK</ID>
+          <Name>Home Team SK</Name>
+          <DimensionID>Dim Team</DimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Team SK</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Squad Conformed BK</AttributeID>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension>
+          <ID>Dim Team</ID>
+          <Name>Dim Team</Name>
+          <DimensionID>Dim Team</DimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Team SK</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Squad Conformed BK</AttributeID>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension>
+          <ID>Dim Player</ID>
+          <Name>Dim Player</Name>
+          <DimensionID>Dim Player</DimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Player SK</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Player Name BK</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Current Position</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Nation SK</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Nation Standard Name BK</AttributeID>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension>
+          <ID>Dim Notes</ID>
+          <Name>Dim Notes</Name>
+          <DimensionID>Dim Notes</DimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Notes SK</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Notes Standard Name BK</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Notes Category</AttributeID>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <MeasureGroups>
+        <MeasureGroup>
+          <ID>Fact Match Event</ID>
+          <Name>Fact Match Event</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Measures>
+            <Measure>
+              <ID>Full Time Home Goals</ID>
+              <Name>Full Time Home Goals</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactMatchEvent</TableID>
+                  <ColumnID>FullTimeHomeGoals</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Full Time Away Goals</ID>
+              <Name>Full Time Away Goals</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactMatchEvent</TableID>
+                  <ColumnID>FullTimeAwayGoals</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Half Time Home Goals</ID>
+              <Name>Half Time Home Goals</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactMatchEvent</TableID>
+                  <ColumnID>HalfTimeHomeGoals</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Half Time Away Goals</ID>
+              <Name>Half Time Away Goals</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactMatchEvent</TableID>
+                  <ColumnID>HalfTimeAwayGoals</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Home Shots</ID>
+              <Name>Home Shots</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactMatchEvent</TableID>
+                  <ColumnID>HomeShots</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Away Shots</ID>
+              <Name>Away Shots</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactMatchEvent</TableID>
+                  <ColumnID>AwayShots</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Home Shots On Target</ID>
+              <Name>Home Shots On Target</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactMatchEvent</TableID>
+                  <ColumnID>HomeShotsOnTarget</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Away Shots On Target</ID>
+              <Name>Away Shots On Target</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactMatchEvent</TableID>
+                  <ColumnID>AwayShotsOnTarget</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Home Fouls</ID>
+              <Name>Home Fouls</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactMatchEvent</TableID>
+                  <ColumnID>HomeFouls</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Away Fouls</ID>
+              <Name>Away Fouls</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactMatchEvent</TableID>
+                  <ColumnID>AwayFouls</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Home Corners</ID>
+              <Name>Home Corners</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactMatchEvent</TableID>
+                  <ColumnID>HomeCorners</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Away Corners</ID>
+              <Name>Away Corners</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactMatchEvent</TableID>
+                  <ColumnID>AwayCorners</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Home Yellow Cards</ID>
+              <Name>Home Yellow Cards</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactMatchEvent</TableID>
+                  <ColumnID>HomeYellowCards</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Away Yellow Cards</ID>
+              <Name>Away Yellow Cards</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactMatchEvent</TableID>
+                  <ColumnID>AwayYellowCards</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Home Red Cards</ID>
+              <Name>Home Red Cards</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactMatchEvent</TableID>
+                  <ColumnID>HomeRedCards</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Away Red Cards</ID>
+              <Name>Away Red Cards</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactMatchEvent</TableID>
+                  <ColumnID>AwayRedCards</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>B365 Home Odds</ID>
+              <Name>B365 Home Odds</Name>
+              <Source>
+                <DataType>Double</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactMatchEvent</TableID>
+                  <ColumnID>B365HomeOdds</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>B365 Draw Odds</ID>
+              <Name>B365 Draw Odds</Name>
+              <Source>
+                <DataType>Double</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactMatchEvent</TableID>
+                  <ColumnID>B365DrawOdds</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>B365 Away Odds</ID>
+              <Name>B365 Away Odds</Name>
+              <Source>
+                <DataType>Double</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactMatchEvent</TableID>
+                  <ColumnID>B365AwayOdds</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Fact Match Event Count</ID>
+              <Name>Fact Match Event Count</Name>
+              <AggregateFunction>Count</AggregateFunction>
+              <Source>
+                <DataType>Integer</DataType>
+                <DataSize>4</DataSize>
+                <Source xsi:type="RowBinding">
+                  <TableID>gold_FactMatchEvent</TableID>
+                </Source>
+              </Source>
+            </Measure>
+          </Measures>
+          <StorageMode>Molap</StorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <Dimensions>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Dim Time</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Time SK</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>Integer</DataType>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>gold_FactMatchEvent</TableID>
+                        <ColumnID>Time_SK</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Away Team SK</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Team SK</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>Integer</DataType>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>gold_FactMatchEvent</TableID>
+                        <ColumnID>AwayTeam_SK</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Home Team SK</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Team SK</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>Integer</DataType>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>gold_FactMatchEvent</TableID>
+                        <ColumnID>HomeTeam_SK</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Partitions>
+            <Partition>
+              <ID>Fact Match Event</ID>
+              <Name>Fact Match Event</Name>
+              <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+              <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+              <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+              <State>Unprocessed</State>
+              <Source xsi:type="DsvTableBinding">
+                <DataSourceViewID>DW Football</DataSourceViewID>
+                <TableID>gold_FactMatchEvent</TableID>
+              </Source>
+              <StorageMode>Molap</StorageMode>
+              <CurrentStorageMode>Molap</CurrentStorageMode>
+              <ProcessingMode>Regular</ProcessingMode>
+            </Partition>
+          </Partitions>
+        </MeasureGroup>
+        <MeasureGroup>
+          <ID>Fact Player Performance</ID>
+          <Name>Fact Player Performance</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Measures>
+            <Measure>
+              <ID>Matches Played</ID>
+              <Name>Matches Played</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactPlayerPerformance</TableID>
+                  <ColumnID>MatchesPlayed</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Minutes Played</ID>
+              <Name>Minutes Played</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactPlayerPerformance</TableID>
+                  <ColumnID>MinutesPlayed</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Goals</ID>
+              <Name>Goals</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactPlayerPerformance</TableID>
+                  <ColumnID>Goals</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Assists</ID>
+              <Name>Assists</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactPlayerPerformance</TableID>
+                  <ColumnID>Assists</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Yellow Cards</ID>
+              <Name>Yellow Cards</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactPlayerPerformance</TableID>
+                  <ColumnID>YellowCards</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Red Cards</ID>
+              <Name>Red Cards</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactPlayerPerformance</TableID>
+                  <ColumnID>RedCards</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Goals Per 90</ID>
+              <Name>Goals Per 90</Name>
+              <Source>
+                <DataType>Double</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactPlayerPerformance</TableID>
+                  <ColumnID>Goals_Per_90</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Assists Per 90</ID>
+              <Name>Assists Per 90</Name>
+              <Source>
+                <DataType>Double</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactPlayerPerformance</TableID>
+                  <ColumnID>Assists_Per_90</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Market Value Euro K</ID>
+              <Name>Market Value Euro K</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactPlayerPerformance</TableID>
+                  <ColumnID>MarketValue_Euro_k</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Fact Player Performance Count</ID>
+              <Name>Fact Player Performance Count</Name>
+              <AggregateFunction>Count</AggregateFunction>
+              <Source>
+                <DataType>Integer</DataType>
+                <DataSize>4</DataSize>
+                <Source xsi:type="RowBinding">
+                  <TableID>gold_FactPlayerPerformance</TableID>
+                </Source>
+              </Source>
+            </Measure>
+          </Measures>
+          <StorageMode>Molap</StorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <Dimensions>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Dim Team</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Team SK</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>Integer</DataType>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>gold_FactPlayerPerformance</TableID>
+                        <ColumnID>Team_SK</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Dim Time</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Time SK</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>Integer</DataType>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>gold_FactPlayerPerformance</TableID>
+                        <ColumnID>Time_SK</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Dim Player</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Player SK</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>Integer</DataType>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>gold_FactPlayerPerformance</TableID>
+                        <ColumnID>Player_SK</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Partitions>
+            <Partition>
+              <ID>Fact Player Performance</ID>
+              <Name>Fact Player Performance</Name>
+              <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+              <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+              <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+              <State>Unprocessed</State>
+              <Source xsi:type="DsvTableBinding">
+                <DataSourceViewID>DW Football</DataSourceViewID>
+                <TableID>gold_FactPlayerPerformance</TableID>
+              </Source>
+              <StorageMode>Molap</StorageMode>
+              <CurrentStorageMode>Molap</CurrentStorageMode>
+              <ProcessingMode>Regular</ProcessingMode>
+            </Partition>
+          </Partitions>
+        </MeasureGroup>
+        <MeasureGroup>
+          <ID>Fact Team Performance</ID>
+          <Name>Fact Team Performance</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Measures>
+            <Measure>
+              <ID>Final Rank</ID>
+              <Name>Final Rank</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactTeamPerformance</TableID>
+                  <ColumnID>Final_Rank</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Matches Played - Fact Team Performance</ID>
+              <Name>Matches Played - Fact Team Performance</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactTeamPerformance</TableID>
+                  <ColumnID>MatchesPlayed</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Wins</ID>
+              <Name>Wins</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactTeamPerformance</TableID>
+                  <ColumnID>Wins</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Draws</ID>
+              <Name>Draws</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactTeamPerformance</TableID>
+                  <ColumnID>Draws</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Losses</ID>
+              <Name>Losses</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactTeamPerformance</TableID>
+                  <ColumnID>Losses</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Goals For</ID>
+              <Name>Goals For</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactTeamPerformance</TableID>
+                  <ColumnID>GoalsFor</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Goals Against</ID>
+              <Name>Goals Against</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactTeamPerformance</TableID>
+                  <ColumnID>GoalsAgainst</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Goal Difference</ID>
+              <Name>Goal Difference</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactTeamPerformance</TableID>
+                  <ColumnID>GoalDifference</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Points</ID>
+              <Name>Points</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactTeamPerformance</TableID>
+                  <ColumnID>Points</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Points Per Match</ID>
+              <Name>Points Per Match</Name>
+              <Source>
+                <DataType>Double</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactTeamPerformance</TableID>
+                  <ColumnID>PointsPerMatch</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Season Attendance</ID>
+              <Name>Season Attendance</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactTeamPerformance</TableID>
+                  <ColumnID>Season_Attendance</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Top Scorer Goals</ID>
+              <Name>Top Scorer Goals</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>gold_FactTeamPerformance</TableID>
+                  <ColumnID>TopScorer_Goals</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Fact Team Performance Count</ID>
+              <Name>Fact Team Performance Count</Name>
+              <AggregateFunction>Count</AggregateFunction>
+              <Source>
+                <DataType>Integer</DataType>
+                <DataSize>4</DataSize>
+                <Source xsi:type="RowBinding">
+                  <TableID>gold_FactTeamPerformance</TableID>
+                </Source>
+              </Source>
+            </Measure>
+          </Measures>
+          <StorageMode>Molap</StorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <Dimensions>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Dim Team</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Team SK</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>Integer</DataType>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>gold_FactTeamPerformance</TableID>
+                        <ColumnID>Team_SK</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Dim Notes</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Notes SK</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>Integer</DataType>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>gold_FactTeamPerformance</TableID>
+                        <ColumnID>Notes_SK</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Dim Time</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Time SK</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>Integer</DataType>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>gold_FactTeamPerformance</TableID>
+                        <ColumnID>Time_SK</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Partitions>
+            <Partition>
+              <ID>Fact Team Performance</ID>
+              <Name>Fact Team Performance</Name>
+              <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+              <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+              <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+              <State>Unprocessed</State>
+              <Source xsi:type="DsvTableBinding">
+                <DataSourceViewID>DW Football</DataSourceViewID>
+                <TableID>gold_FactTeamPerformance</TableID>
+              </Source>
+              <StorageMode>Molap</StorageMode>
+              <CurrentStorageMode>Molap</CurrentStorageMode>
+              <ProcessingMode>Regular</ProcessingMode>
+            </Partition>
+          </Partitions>
+        </MeasureGroup>
+      </MeasureGroups>
+      <Source>
+        <DataSourceViewID>DW Football</DataSourceViewID>
+      </Source>
+    </Cube>
+  </Cubes>
+  <DataSources>
+    <DataSource xsi:type="RelationalDataSource">
+      <ID>DW Football</ID>
+      <Name>DW_Football_Staging</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <ConnectionString>Provider=SQLNCLI11.1;Data Source=(localdb)\MSSQLLocalDB;Password=;User ID=;Initial Catalog=DW_Football_Staging</ConnectionString>
+      <ConnectionStringSecurity>PasswordRemoved</ConnectionStringSecurity>
+      <ImpersonationInfo>
+        <ImpersonationMode>ImpersonateCurrentUser</ImpersonationMode>
+        <ImpersonationInfoSecurity>Unchanged</ImpersonationInfoSecurity>
+      </ImpersonationInfo>
+      <Timeout>PT0S</Timeout>
+    </DataSource>
+  </DataSources>
+  <DataSourceViews>
+    <DataSourceView>
+      <ID>DW Football</ID>
+      <Name>DW Football</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+          <Value>_ALL_TABLES_</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+          <Value>
+            <Layouts xmlns="">
+              <Diagram>
+                <Name>_ALL_TABLES_</Name>
+                <DiagramLayout />
+                <ShowRelationshipNames>False</ShowRelationshipNames>
+                <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+                <DiagramViewPortLeft>0</DiagramViewPortLeft>
+                <DiagramViewPortTop>0</DiagramViewPortTop>
+                <DiagramBoundingLeft>0</DiagramBoundingLeft>
+                <DiagramBoundingTop>0</DiagramBoundingTop>
+                <DiagramZoom>100</DiagramZoom>
+              </Diagram>
+            </Layouts>
+          </Value>
+        </Annotation>
+      </Annotations>
+      <DataSourceID>DW Football</DataSourceID>
+      <Schema>
+        <xs:schema id="DW_x0020_Football" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+          <xs:element name="DW_x0020_Football" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="58761893-0f0e-4f31-a36f-b14818d2a68c">
+            <xs:complexType>
+              <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="gold_DimNation" msprop:design-time-name="b6f6d179-df5a-4c85-b07e-4acebc4aefd8" msprop:FriendlyName="DimNation" msprop:TableType="Table" msprop:DbSchemaName="gold" msprop:DbTableName="DimNation">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="Nation_SK" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="Nation_SK" msprop:DbColumnName="Nation_SK" msprop:design-time-name="c122586f-74ec-4298-815b-e7e1f8c9a7ab" type="xs:int" />
+                      <xs:element name="Nation_Standard_Name_BK" msprop:FriendlyName="Nation_Standard_Name_BK" msprop:DbColumnName="Nation_Standard_Name_BK" msprop:design-time-name="6c5a5ee4-7cd3-46b3-b7d6-bb96e1575c10">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="100" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="gold_DimNotes" msprop:design-time-name="c70f92fc-98db-4367-b669-dbc521d199dd" msprop:FriendlyName="DimNotes" msprop:TableType="Table" msprop:DbSchemaName="gold" msprop:DbTableName="DimNotes">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="Notes_SK" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="Notes_SK" msprop:DbColumnName="Notes_SK" msprop:design-time-name="0e9e89c3-6884-4558-8631-c40f3e4c554e" type="xs:int" />
+                      <xs:element name="Notes_Standard_Name_BK" msprop:FriendlyName="Notes_Standard_Name_BK" msprop:DbColumnName="Notes_Standard_Name_BK" msprop:design-time-name="e8b1be15-a984-422e-9517-b9349cf04cd1">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="255" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="Notes_Category" msprop:FriendlyName="Notes_Category" msprop:DbColumnName="Notes_Category" msprop:design-time-name="bdb1032c-3fdf-4350-be1b-e3c6d764c59a" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="50" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="gold_DimPlayer" msprop:design-time-name="0ca5cddc-91c0-485c-b3de-df17e0ff8776" msprop:FriendlyName="DimPlayer" msprop:TableType="Table" msprop:DbSchemaName="gold" msprop:DbTableName="DimPlayer">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="Player_SK" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="Player_SK" msprop:DbColumnName="Player_SK" msprop:design-time-name="8182562b-c01f-485c-a1c1-1102394806e1" type="xs:int" />
+                      <xs:element name="Player_Name_BK" msprop:FriendlyName="Player_Name_BK" msprop:DbColumnName="Player_Name_BK" msprop:design-time-name="37b67868-59f2-4932-ae6a-e364318ac0ee">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="100" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="BirthYear" msprop:FriendlyName="BirthYear" msprop:DbColumnName="BirthYear" msprop:design-time-name="2346af13-8cc3-4d9f-b224-bafa112c37f0" type="xs:int" minOccurs="0" />
+                      <xs:element name="Current_Position" msprop:FriendlyName="Current_Position" msprop:DbColumnName="Current_Position" msprop:design-time-name="2a756e9d-559d-40fb-b66c-711b7c282d3f" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="10" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="Nation_SK" msprop:FriendlyName="Nation_SK" msprop:DbColumnName="Nation_SK" msprop:design-time-name="c0e7e6d1-e063-4b5a-ae4a-870486882446" type="xs:int" minOccurs="0" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="gold_DimTeam" msprop:design-time-name="e6d98adf-f2d0-48d1-8365-b33285c4de6d" msprop:FriendlyName="DimTeam" msprop:TableType="Table" msprop:DbSchemaName="gold" msprop:DbTableName="DimTeam">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="Team_SK" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="Team_SK" msprop:DbColumnName="Team_SK" msprop:design-time-name="18802cb2-46d1-4a8c-8ce9-d568352489b9" type="xs:int" />
+                      <xs:element name="Squad_Conformed_BK" msprop:FriendlyName="Squad_Conformed_BK" msprop:DbColumnName="Squad_Conformed_BK" msprop:design-time-name="d29dcf47-569e-4b5d-8d44-2bf2a17c3c2a">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="100" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="gold_DimTime" msprop:design-time-name="fde3af40-884c-47cf-b605-6fb4695b403a" msprop:FriendlyName="DimTime" msprop:TableType="Table" msprop:DbSchemaName="gold" msprop:DbTableName="DimTime">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="Time_SK" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="Time_SK" msprop:DbColumnName="Time_SK" msprop:design-time-name="633d2edf-962c-4671-967d-2dd03f7ed885" type="xs:int" />
+                      <xs:element name="Season_BK" msprop:FriendlyName="Season_BK" msprop:DbColumnName="Season_BK" msprop:design-time-name="68d1ff91-b0d4-4ca9-b5cf-6c3aba274726">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="10" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="Season_Start_Year" msprop:FriendlyName="Season_Start_Year" msprop:DbColumnName="Season_Start_Year" msprop:design-time-name="058b9498-863f-4933-a38a-25d2ba739e8d" type="xs:int" />
+                      <xs:element name="Season_End_Year" msprop:FriendlyName="Season_End_Year" msprop:DbColumnName="Season_End_Year" msprop:design-time-name="46c1146f-53ef-4cfc-9ba6-191d180c8dcc" type="xs:int" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="gold_FactMatchEvent" msprop:design-time-name="98c6cab1-0e54-4f26-a626-e9ed974aa1a7" msprop:FriendlyName="FactMatchEvent" msprop:TableType="Table" msprop:DbSchemaName="gold" msprop:DbTableName="FactMatchEvent">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="Time_SK" msprop:FriendlyName="Time_SK" msprop:DbColumnName="Time_SK" msprop:design-time-name="2d9b431d-b096-424b-9aa6-b8e268b6a39e" type="xs:int" />
+                      <xs:element name="HomeTeam_SK" msprop:FriendlyName="HomeTeam_SK" msprop:DbColumnName="HomeTeam_SK" msprop:design-time-name="9378bf2a-6d8d-4649-9288-99919f8b1a35" type="xs:int" />
+                      <xs:element name="AwayTeam_SK" msprop:FriendlyName="AwayTeam_SK" msprop:DbColumnName="AwayTeam_SK" msprop:design-time-name="9e8d5d78-bd99-44e2-8dbd-84198afa2d0e" type="xs:int" />
+                      <xs:element name="MatchDate" msprop:FriendlyName="MatchDate" msprop:DbColumnName="MatchDate" msprop:design-time-name="952acee4-c143-41f5-8319-f640d7ab9d68" type="xs:dateTime" />
+                      <xs:element name="FullTimeHomeGoals" msprop:FriendlyName="FullTimeHomeGoals" msprop:DbColumnName="FullTimeHomeGoals" msprop:design-time-name="8cc14320-6339-4ded-9a1f-ba099aeca429" type="xs:int" minOccurs="0" />
+                      <xs:element name="FullTimeAwayGoals" msprop:FriendlyName="FullTimeAwayGoals" msprop:DbColumnName="FullTimeAwayGoals" msprop:design-time-name="c66fcdc7-652a-4b8b-b273-e73b9a0d804b" type="xs:int" minOccurs="0" />
+                      <xs:element name="FullTimeResult" msprop:FriendlyName="FullTimeResult" msprop:DbColumnName="FullTimeResult" msprop:design-time-name="4918ce28-7b6b-40d0-9ceb-42b5aafb5ee1" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="5" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="HalfTimeHomeGoals" msprop:FriendlyName="HalfTimeHomeGoals" msprop:DbColumnName="HalfTimeHomeGoals" msprop:design-time-name="f259c4a6-216d-4563-9a1d-bc4ec623d793" type="xs:int" minOccurs="0" />
+                      <xs:element name="HalfTimeAwayGoals" msprop:FriendlyName="HalfTimeAwayGoals" msprop:DbColumnName="HalfTimeAwayGoals" msprop:design-time-name="04837ae4-8e6b-402b-aa31-cf17f0b60e63" type="xs:int" minOccurs="0" />
+                      <xs:element name="HalfTimeResult" msprop:FriendlyName="HalfTimeResult" msprop:DbColumnName="HalfTimeResult" msprop:design-time-name="a196181a-7957-487c-a1da-d42432b7e98d" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="5" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="HomeShots" msprop:FriendlyName="HomeShots" msprop:DbColumnName="HomeShots" msprop:design-time-name="9544641b-2c53-4b0c-ad2e-0d009883ad6b" type="xs:int" minOccurs="0" />
+                      <xs:element name="AwayShots" msprop:FriendlyName="AwayShots" msprop:DbColumnName="AwayShots" msprop:design-time-name="a425ceb1-38c2-491a-be31-46cf281ca27c" type="xs:int" minOccurs="0" />
+                      <xs:element name="HomeShotsOnTarget" msprop:FriendlyName="HomeShotsOnTarget" msprop:DbColumnName="HomeShotsOnTarget" msprop:design-time-name="6eda9cf2-9e71-42cf-bb77-809a384dbcf1" type="xs:int" minOccurs="0" />
+                      <xs:element name="AwayShotsOnTarget" msprop:FriendlyName="AwayShotsOnTarget" msprop:DbColumnName="AwayShotsOnTarget" msprop:design-time-name="800f669a-9010-4cfb-ab0c-937867eba4cb" type="xs:int" minOccurs="0" />
+                      <xs:element name="HomeFouls" msprop:FriendlyName="HomeFouls" msprop:DbColumnName="HomeFouls" msprop:design-time-name="9ebbd735-85fe-46ec-a511-4af5652f12c5" type="xs:int" minOccurs="0" />
+                      <xs:element name="AwayFouls" msprop:FriendlyName="AwayFouls" msprop:DbColumnName="AwayFouls" msprop:design-time-name="3b560620-08dd-4648-8965-5a00b994f938" type="xs:int" minOccurs="0" />
+                      <xs:element name="HomeCorners" msprop:FriendlyName="HomeCorners" msprop:DbColumnName="HomeCorners" msprop:design-time-name="c9a4cabf-e00f-4efe-825a-fab92e736a43" type="xs:int" minOccurs="0" />
+                      <xs:element name="AwayCorners" msprop:FriendlyName="AwayCorners" msprop:DbColumnName="AwayCorners" msprop:design-time-name="f23d3cea-6ede-4bc4-861b-832eb67c9dc3" type="xs:int" minOccurs="0" />
+                      <xs:element name="HomeYellowCards" msprop:FriendlyName="HomeYellowCards" msprop:DbColumnName="HomeYellowCards" msprop:design-time-name="c42fa845-6134-4e13-8600-948739dd831b" type="xs:int" minOccurs="0" />
+                      <xs:element name="AwayYellowCards" msprop:FriendlyName="AwayYellowCards" msprop:DbColumnName="AwayYellowCards" msprop:design-time-name="ed830cd0-8a7c-49d2-8b04-50acf9e95ce0" type="xs:int" minOccurs="0" />
+                      <xs:element name="HomeRedCards" msprop:FriendlyName="HomeRedCards" msprop:DbColumnName="HomeRedCards" msprop:design-time-name="c9ef2371-07ba-47d5-95d9-a14c65274a8a" type="xs:int" minOccurs="0" />
+                      <xs:element name="AwayRedCards" msprop:FriendlyName="AwayRedCards" msprop:DbColumnName="AwayRedCards" msprop:design-time-name="205d11e8-4f55-490d-9a7b-474041841530" type="xs:int" minOccurs="0" />
+                      <xs:element name="B365HomeOdds" msprop:FriendlyName="B365HomeOdds" msprop:DbColumnName="B365HomeOdds" msprop:design-time-name="073e4a46-5108-4624-908a-a1666fcd9a33" type="xs:decimal" minOccurs="0" />
+                      <xs:element name="B365DrawOdds" msprop:FriendlyName="B365DrawOdds" msprop:DbColumnName="B365DrawOdds" msprop:design-time-name="b9c9dd0e-1db6-4674-bc2f-0e834770e739" type="xs:decimal" minOccurs="0" />
+                      <xs:element name="B365AwayOdds" msprop:FriendlyName="B365AwayOdds" msprop:DbColumnName="B365AwayOdds" msprop:design-time-name="2f56ba55-3654-4772-8cee-efd68eba71d3" type="xs:decimal" minOccurs="0" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="gold_FactPlayerPerformance" msprop:design-time-name="d2896952-80de-4593-b6c1-f4584d5e25a5" msprop:FriendlyName="FactPlayerPerformance" msprop:TableType="Table" msprop:DbSchemaName="gold" msprop:DbTableName="FactPlayerPerformance">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="Time_SK" msprop:FriendlyName="Time_SK" msprop:DbColumnName="Time_SK" msprop:design-time-name="0272523c-b182-4799-9a36-09fcd73ccb9a" type="xs:int" />
+                      <xs:element name="Team_SK" msprop:FriendlyName="Team_SK" msprop:DbColumnName="Team_SK" msprop:design-time-name="1121abb7-c3db-49eb-810f-aa6fc964e37c" type="xs:int" />
+                      <xs:element name="Player_SK" msprop:FriendlyName="Player_SK" msprop:DbColumnName="Player_SK" msprop:design-time-name="5dd4d9c8-f872-4957-8e11-548be2a1fed5" type="xs:int" />
+                      <xs:element name="MatchesPlayed" msprop:FriendlyName="MatchesPlayed" msprop:DbColumnName="MatchesPlayed" msprop:design-time-name="3d14baaa-060e-4f94-b2a0-55dfb96b2ab3" type="xs:int" minOccurs="0" />
+                      <xs:element name="MinutesPlayed" msprop:FriendlyName="MinutesPlayed" msprop:DbColumnName="MinutesPlayed" msprop:design-time-name="dccbd83a-677b-4b8d-b915-453b89a2aed9" type="xs:int" minOccurs="0" />
+                      <xs:element name="Goals" msprop:FriendlyName="Goals" msprop:DbColumnName="Goals" msprop:design-time-name="b09dd67c-f339-43b2-a68c-a60bf7b81d02" type="xs:int" minOccurs="0" />
+                      <xs:element name="Assists" msprop:FriendlyName="Assists" msprop:DbColumnName="Assists" msprop:design-time-name="0315386d-2c6a-4ffc-8560-d541e8d904ee" type="xs:int" minOccurs="0" />
+                      <xs:element name="YellowCards" msprop:FriendlyName="YellowCards" msprop:DbColumnName="YellowCards" msprop:design-time-name="0f02cb1c-d9e8-4e51-a2f8-9ad9d4b25f33" type="xs:int" minOccurs="0" />
+                      <xs:element name="RedCards" msprop:FriendlyName="RedCards" msprop:DbColumnName="RedCards" msprop:design-time-name="27c5d58e-afd5-4263-8dc5-9ce3dfecf6a3" type="xs:int" minOccurs="0" />
+                      <xs:element name="Goals_Per_90" msprop:FriendlyName="Goals_Per_90" msprop:DbColumnName="Goals_Per_90" msprop:design-time-name="ef0585c9-6809-4e8c-a246-3ecb062cdcad" type="xs:decimal" minOccurs="0" />
+                      <xs:element name="Assists_Per_90" msprop:FriendlyName="Assists_Per_90" msprop:DbColumnName="Assists_Per_90" msprop:design-time-name="47af336f-ded0-4619-afe7-9b20908ff0bd" type="xs:decimal" minOccurs="0" />
+                      <xs:element name="MarketValue_Euro_k" msprop:FriendlyName="MarketValue_Euro_k" msprop:DbColumnName="MarketValue_Euro_k" msprop:design-time-name="476babbc-8876-4ed1-9cc6-c7a28eeb3eca" type="xs:int" minOccurs="0" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="gold_FactTeamPerformance" msprop:design-time-name="02f9e8bb-3587-4538-ba19-4d429254a5ff" msprop:FriendlyName="FactTeamPerformance" msprop:TableType="Table" msprop:DbSchemaName="gold" msprop:DbTableName="FactTeamPerformance">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="Time_SK" msprop:FriendlyName="Time_SK" msprop:DbColumnName="Time_SK" msprop:design-time-name="419d6508-f7d5-48a6-a4a7-6d241dc7779e" type="xs:int" />
+                      <xs:element name="Team_SK" msprop:FriendlyName="Team_SK" msprop:DbColumnName="Team_SK" msprop:design-time-name="b94a2648-8aa6-46e0-8667-1495a525966f" type="xs:int" />
+                      <xs:element name="Notes_SK" msprop:FriendlyName="Notes_SK" msprop:DbColumnName="Notes_SK" msprop:design-time-name="e6108f6d-b4fc-4273-a83d-c06444bd32ad" type="xs:int" />
+                      <xs:element name="Final_Rank" msprop:FriendlyName="Final_Rank" msprop:DbColumnName="Final_Rank" msprop:design-time-name="911fa737-f17f-4d78-bdf5-8c070ea566ef" type="xs:int" minOccurs="0" />
+                      <xs:element name="MatchesPlayed" msprop:FriendlyName="MatchesPlayed" msprop:DbColumnName="MatchesPlayed" msprop:design-time-name="0341a0cb-f0d4-4f3d-930c-37eae56d276f" type="xs:int" minOccurs="0" />
+                      <xs:element name="Wins" msprop:FriendlyName="Wins" msprop:DbColumnName="Wins" msprop:design-time-name="d838df4e-840e-43aa-93fd-36887863a700" type="xs:int" minOccurs="0" />
+                      <xs:element name="Draws" msprop:FriendlyName="Draws" msprop:DbColumnName="Draws" msprop:design-time-name="54c8ee73-b2b6-4d11-a66c-d9c2de6da08d" type="xs:int" minOccurs="0" />
+                      <xs:element name="Losses" msprop:FriendlyName="Losses" msprop:DbColumnName="Losses" msprop:design-time-name="d2a3be66-54a9-41ba-99eb-472219f2dc29" type="xs:int" minOccurs="0" />
+                      <xs:element name="GoalsFor" msprop:FriendlyName="GoalsFor" msprop:DbColumnName="GoalsFor" msprop:design-time-name="2e8d74d0-9cc4-4d41-a494-d5f1aef77357" type="xs:int" minOccurs="0" />
+                      <xs:element name="GoalsAgainst" msprop:FriendlyName="GoalsAgainst" msprop:DbColumnName="GoalsAgainst" msprop:design-time-name="605cf299-b533-41ec-87a4-941e32ad4a10" type="xs:int" minOccurs="0" />
+                      <xs:element name="GoalDifference" msprop:FriendlyName="GoalDifference" msprop:DbColumnName="GoalDifference" msprop:design-time-name="74063c65-a532-47b2-9bca-0d7a6d8a51db" type="xs:int" minOccurs="0" />
+                      <xs:element name="Points" msprop:FriendlyName="Points" msprop:DbColumnName="Points" msprop:design-time-name="6cfd184f-4010-4f7c-b68a-5b31845f2cfb" type="xs:int" minOccurs="0" />
+                      <xs:element name="PointsPerMatch" msprop:FriendlyName="PointsPerMatch" msprop:DbColumnName="PointsPerMatch" msprop:design-time-name="42e1af20-89e3-4760-8d2d-cf360641cd38" type="xs:decimal" minOccurs="0" />
+                      <xs:element name="Season_Attendance" msprop:FriendlyName="Season_Attendance" msprop:DbColumnName="Season_Attendance" msprop:design-time-name="938f0f8b-3145-496c-8e3f-96987cd00c30" type="xs:int" minOccurs="0" />
+                      <xs:element name="TopScorer_Goals" msprop:FriendlyName="TopScorer_Goals" msprop:DbColumnName="TopScorer_Goals" msprop:design-time-name="701932c5-677b-4b12-9d6f-315acbb0a4ae" type="xs:int" minOccurs="0" />
+                      <xs:element name="TopScorer_PlayerName" msprop:FriendlyName="TopScorer_PlayerName" msprop:DbColumnName="TopScorer_PlayerName" msprop:design-time-name="a5328c7f-e2e7-4f46-aac6-68831c26b68e" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="100" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="Goalkeeper_PlayerName" msprop:FriendlyName="Goalkeeper_PlayerName" msprop:DbColumnName="Goalkeeper_PlayerName" msprop:design-time-name="3f1e3b04-88ad-4ac7-8e9b-cc0bbdc3058e" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="100" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:choice>
+            </xs:complexType>
+            <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//gold_DimNation" />
+              <xs:field xpath="Nation_SK" />
+            </xs:unique>
+            <xs:unique name="gold_DimNotes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//gold_DimNotes" />
+              <xs:field xpath="Notes_SK" />
+            </xs:unique>
+            <xs:unique name="gold_DimPlayer_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//gold_DimPlayer" />
+              <xs:field xpath="Player_SK" />
+            </xs:unique>
+            <xs:unique name="gold_DimTeam_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//gold_DimTeam" />
+              <xs:field xpath="Team_SK" />
+            </xs:unique>
+            <xs:unique name="gold_DimTime_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//gold_DimTime" />
+              <xs:field xpath="Time_SK" />
+            </xs:unique>
+            <xs:unique name="gold_FactMatchEvent_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//gold_FactMatchEvent" />
+              <xs:field xpath="Time_SK" />
+              <xs:field xpath="HomeTeam_SK" />
+              <xs:field xpath="AwayTeam_SK" />
+            </xs:unique>
+            <xs:unique name="gold_FactPlayerPerformance_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//gold_FactPlayerPerformance" />
+              <xs:field xpath="Time_SK" />
+              <xs:field xpath="Team_SK" />
+              <xs:field xpath="Player_SK" />
+            </xs:unique>
+            <xs:unique name="gold_FactTeamPerformance_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//gold_FactTeamPerformance" />
+              <xs:field xpath="Time_SK" />
+              <xs:field xpath="Team_SK" />
+            </xs:unique>
+            <xs:keyref name="FK__FactTeamP__Team___2A164134" refer="gold_DimTeam_Constraint1">
+              <xs:selector xpath=".//gold_FactTeamPerformance" />
+              <xs:field xpath="Team_SK" />
+            </xs:keyref>
+            <xs:keyref name="FK__FactTeamP__Notes__2B0A656D" refer="gold_DimNotes_Constraint1">
+              <xs:selector xpath=".//gold_FactTeamPerformance" />
+              <xs:field xpath="Notes_SK" />
+            </xs:keyref>
+            <xs:keyref name="FK__FactTeamP__Time___29221CFB" refer="gold_DimTime_Constraint1">
+              <xs:selector xpath=".//gold_FactTeamPerformance" />
+              <xs:field xpath="Time_SK" />
+            </xs:keyref>
+            <xs:keyref name="FK__FactPlaye__Team___2EDAF651" refer="gold_DimTeam_Constraint1">
+              <xs:selector xpath=".//gold_FactPlayerPerformance" />
+              <xs:field xpath="Team_SK" />
+            </xs:keyref>
+            <xs:keyref name="FK__FactPlaye__Time___2DE6D218" refer="gold_DimTime_Constraint1">
+              <xs:selector xpath=".//gold_FactPlayerPerformance" />
+              <xs:field xpath="Time_SK" />
+            </xs:keyref>
+            <xs:keyref name="FK__FactPlaye__Playe__2FCF1A8A" refer="gold_DimPlayer_Constraint1">
+              <xs:selector xpath=".//gold_FactPlayerPerformance" />
+              <xs:field xpath="Player_SK" />
+            </xs:keyref>
+            <xs:keyref name="FK__FactMatch__Time___32AB8735" refer="gold_DimTime_Constraint1">
+              <xs:selector xpath=".//gold_FactMatchEvent" />
+              <xs:field xpath="Time_SK" />
+            </xs:keyref>
+            <xs:keyref name="FK__FactMatch__AwayT__3493CFA7" refer="gold_DimTeam_Constraint1">
+              <xs:selector xpath=".//gold_FactMatchEvent" />
+              <xs:field xpath="AwayTeam_SK" />
+            </xs:keyref>
+            <xs:keyref name="FK__FactMatch__HomeT__339FAB6E" refer="gold_DimTeam_Constraint1">
+              <xs:selector xpath=".//gold_FactMatchEvent" />
+              <xs:field xpath="HomeTeam_SK" />
+            </xs:keyref>
+            <xs:keyref name="FK__DimPlayer__Natio__236943A5" refer="Constraint1">
+              <xs:selector xpath=".//gold_DimPlayer" />
+              <xs:field xpath="Nation_SK" />
+            </xs:keyref>
+          </xs:element>
+        </xs:schema>
+        <DW_x0020_Football xmlns="" />
+      </Schema>
+    </DataSourceView>
+  </DataSourceViews>
+</Database>

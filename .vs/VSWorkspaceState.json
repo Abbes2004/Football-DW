@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\ssis",
-    "\\ssis\\Integration Services Project1",
-    "\\ssis\\Integration Services Project1\\Integration Services Project1"
+    ""
   ],
-  "SelectedNode": "\\ssis\\Integration Services Project1\\Integration Services Project1.slnx",
+  "SelectedNode": "\\Analysis Services Tabular Project.slnx",
   "PreviewInSolutionExplorer": false
 }

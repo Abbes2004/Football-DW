@@ -1,0 +1,59 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Abbes\\Football-DW-Project\\ssas\\Football_DW_Cube\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8C0620CC-FBFF-81B2-19C1-239347DF15F4}|Football_DW_Cube\\Football_DW_Cube.dwproj|D:\\Abbes\\Football-DW-Project\\ssas\\Football_DW_Cube\\Football_DW_Cube\\DW Football.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{8C0620CC-FBFF-81B2-19C1-239347DF15F4}|Football_DW_Cube\\Football_DW_Cube.dwproj|solutionrelative:Football_DW_Cube\\DW Football.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C0620CC-FBFF-81B2-19C1-239347DF15F4}|Football_DW_Cube\\Football_DW_Cube.dwproj|D:\\Abbes\\Football-DW-Project\\ssas\\Football_DW_Cube\\Football_DW_Cube\\Dim Nation.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{8C0620CC-FBFF-81B2-19C1-239347DF15F4}|Football_DW_Cube\\Football_DW_Cube.dwproj|solutionrelative:Football_DW_Cube\\Dim Nation.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DW Football.dsv [Design]",
+              "DocumentMoniker": "D:\\Abbes\\Football-DW-Project\\ssas\\Football_DW_Cube\\Football_DW_Cube\\DW Football.dsv",
+              "RelativeDocumentMoniker": "Football_DW_Cube\\DW Football.dsv",
+              "ToolTip": "D:\\Abbes\\Football-DW-Project\\ssas\\Football_DW_Cube\\Football_DW_Cube\\DW Football.dsv [Design]",
+              "RelativeToolTip": "Football_DW_Cube\\DW Football.dsv [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-13T01:53:48.581Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dim Nation.dim [Design]",
+              "DocumentMoniker": "D:\\Abbes\\Football-DW-Project\\ssas\\Football_DW_Cube\\Football_DW_Cube\\Dim Nation.dim",
+              "RelativeDocumentMoniker": "Football_DW_Cube\\Dim Nation.dim",
+              "ToolTip": "D:\\Abbes\\Football-DW-Project\\ssas\\Football_DW_Cube\\Football_DW_Cube\\Dim Nation.dim [Design]",
+              "RelativeToolTip": "Football_DW_Cube\\Dim Nation.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-13T01:53:52.364Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
